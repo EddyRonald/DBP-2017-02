@@ -1,0 +1,38 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.columnas
+{
+	position: relative;
+	top: 125px;
+}
+.text
+{
+	font-size:30px;
+	font-family: Arial;
+	color: white;
+	border:0px;
+	background: #d1e0e0;
+	width: 325.8px;
+	height: 80px;
+}
+.columna1
+{
+	font.size: 30px;
+	font-family: Arial;
+	color:white;
+	border:0px;
+	background:#80ffff;
+	width: 80px;
+	height: 80px;
+}
+.columna2
+{
+font.size: 30px;
+color:white;
+border:0px;
+background: #00BFFF;
+width: 80px;
+height: 80px;
+}
