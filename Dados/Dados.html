@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dados</title>
+  <style>
+td {
+  width: 30px;
+  height: 30px;
+  color: red;
+  align-content: center;
+}
+p {
+	font-size: 25pt;
+	color: #20bcd5;
+	text-align: center;
+	padding: 18px 0 18px 0;
+	margin: 0 0 10px 00;
+}
+button {
+  margin-left: 30px;
+  margin-bottom: 10px;
+  color : blue;
+}
+table {
+  width: 150px;
+  height: 50px;
+  font-size: gray;
+  color: black;
+  padding: 3px;
+}
+  </style>
+  <script>
+
+function lanzar(){
+  lanzar3();
+  lanzar2();
+  ganador();
+  myFunction();
+}
+var val;
+var valor;
+function lanzar2(){
+  val = Math.floor(Math.random()*6+1);
+  var dado2 = {
+    1: [4],
+    2: [0, 8],
+    3: [0, 4, 8],
+    4: [0, 2, 6, 8],
+    5: [0, 2, 4, 6, 8],
+    6: [0, 2, 3, 5, 6, 8],
+  };
+  pintar2(dado2[val]);
+}
+function lanzar3(){
+  valor = Math.floor(Math.random()*6+1);
+  var dado = {
+    1: [4],
+    2: [0, 8],
+    3: [0, 4, 8],
+    4: [0, 2, 6, 8],
+    5: [0, 2, 4, 6, 8],
+    6: [0, 2, 3, 5, 6, 8],
+  };
+  pintar(dado[valor]);
+  }
+
+function pintar(items) {
+  for (var i=0; i<9; i++) {
+    var celda = document.getElementById(i + "");
+    celda.innerHTML = "";
+  }
+  for (var i=0; i<items.length; i++) {
+    var celda = document.getElementById(items[i] + "");
+    celda.innerHTML = "*";  
+  }
+}
+function pintar2(items) {
+  for (var i=0; i<9; i++) {
+    var cel = document.getElementById(i + "*");
+    cel.innerHTML = "";
+  }
+  for (var i=0; i<items.length; i++) {
+    var cel = document.getElementById(items[i] + "*");
+    cel.innerHTML = "*";  
+  }
+}
+function ganador(){
+if(valor>val){
+  document.getElementById("dam").innerHTML = "El ganador es el dado 1";
+}
+if(val>valor){
+  document.getElementById("dam").innerHTML = "El ganador es el dado 2";
+}
+if(val==valor){
+  document.getElementById("dam").innerHTML = "Ambos son iguales";
+}
+}
+function myFunction() {
+    document.getElementById("myForm").reset();
+} 
+ </script>
+</head>
+<body>
+  <button onclick="lanzar();">Lanzar</button>
+  <table border="1px">
+    <tr>
+      <td id="0"></td>
+      <td id="1"></td>
+      <td id="2"></td>
+    </tr>
+    <tr>
+      <td id="3"></td>
+      <td id="4"></td>
+      <td id="5"></td>
+    </tr>
+    <tr>
+      <td id="6"></td>
+      <td id="7"></td>
+      <td id="8"></td>
+    </tr>
+  </table>
+  <table border="1px" ;>
+    <tr>
+      <td id="0*"></td>
+      <td id="1*"></td>
+      <td id="2*"></td>
+    </tr>
+    <tr>
+      <td id="3*"></td>
+      <td id="4*"></td>
+      <td id="5*"></td>
+    </tr>
+    <tr>
+      <td id="6*"></td>
+      <td id="7*"></td>
+      <td id="8*"></td>
+    </tr>
+  </table>
+  <p id="dam">Y el ganador es</p>
+</body>
+</html>
